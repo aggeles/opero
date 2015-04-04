@@ -34,7 +34,7 @@
 </p>
 
 <div class="signupForm">
-<form name="signupForm" action="signup-submit2.php" method="post" enctype="multipart/form-data">
+<form name="signupForm" action="signup-submit.php" method="post" enctype="multipart/form-data">
 
 <center><input id="idFormInput" placeholder="First Name" name="first_name" type="text" size="20em" required></center>
 <center><input id="idFormInput" placeholder="Last Name" name="last_name" type="text" size="20em" required></center>
@@ -51,12 +51,6 @@
 <center><input id="submit" type="submit" value="Register" name="submit"></center>
 
 </form>
-
-
-<!--
-<p id="dol">Check to receive additional info from the Department of Labor<input type="radio" name="dolInfo"></p>-->
-</p><!--end input id-->
-
 
 
 

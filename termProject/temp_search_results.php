@@ -83,7 +83,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 		'page' => $page,));
 		if($result->hits == 0){
 
-		echo "<div id=\"no_of_results_message\">No results found for ".$job."</div>";
+		echo "<div id=\"no_of_results_message\">No results found for '".$job."' in ".$city.", ".$state."</div>";
 		echo "<a class=\"ax\" href=\"index.html\"><p id=\"homelink\">Click to go back to homepage</p></a>";
 		}
 		if ($result->type == 'JOBS' ) {	
