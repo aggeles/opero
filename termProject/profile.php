@@ -73,8 +73,12 @@ include "session.php";
           var doc = data[google.picker.Response.DOCUMENTS][0];
           url = doc[google.picker.Document.URL];
         }
-        var message = 'You picked: ' + url;
-        document.getElementById('result').innerHTML = message;
+        var xmlhttp;
+        if(window.XMLHttpRequest) {
+            xmlhttp = new XMLHttpRequest();
+        }
+        xmlhttp.open("POST", "profile.php", true);
+		xmlhttp.send(url);            
       }
     </script>	
 
@@ -93,9 +97,10 @@ include "session.php";
 	<script type="text/javascript" src="https://apis.google.com/js/api.js"></script>
 	
 	
+	<a href="changePassword.php">Change Password</a><br>
+	<a href="logout.php">Log Out</a><br>
+	
 	<button onclick="onApiLoad()">Upload Resume</button><br>
-	<a href="changePassword.php">Change Password</a>
-	<a href="logout.php">Log Out</a>
 
 	</div><!--end linkbox-->
 	
@@ -106,6 +111,11 @@ include "session.php";
 	<div ="favejobsTable">
 	<?php include "faveJobs.php";?>
 	</div>
+	
+	<?php 
+	$url = $_POST["url"];
+	echo url;	
+	?>
 	
 	<!--terminado-->
 	
