@@ -81,6 +81,7 @@ include "session.php";
    		xmlhttp.open("GET", "savedocument.php?url=" + url, true);
    		xmlhttp.send();
    		xmlhttp.onreadystatechange=function() {
+   	   		//Reloads the page after the database is updated
    			window.location = "http://www.opero.us/profile.php?" + (Math.random() * 10);
    		}	
       }
@@ -103,8 +104,13 @@ include "session.php";
 				url += "link" + count + "=" + checked[i] + "&";
 			}	
 		}	
+		url += "count=" + count;
 		xmlhttp.open("GET", "deletedocument.php" + url, true);
-		xmlhttp.sent();
+		xmlhttp.send();
+		xmlhttp.onreadystatechange=function() {
+   	   		//Reloads the page after the database is updated
+   			window.location = "http://www.opero.us/profile.php?" + (Math.random() * 10);
+   		}	
       }            
     </script>	
 </head>
@@ -116,16 +122,11 @@ include "session.php";
 	<div id = "linkbox">
 	<a href="index.php">Home</a>
 	<a href="setUserPrefs.php">Preferences</a>
+	<a href="changePassword.php">Change Password</a><br>
+	<a href="logout.php">Log Out</a><br>
 	
 	<!--set preferences should include number of fave jobs to display
 	Pref should be saved as $_SESSION['faveJobCount']-->
-	
-	<!-- The Google API Loader script. -->
-	<script type="text/javascript" src="https://apis.google.com/js/api.js"></script>
-	
-	
-	<a href="changePassword.php">Change Password</a><br>
-	<a href="logout.php">Log Out</a><br>
 	
 	</div><!--end linkbox-->
 	
@@ -136,6 +137,8 @@ include "session.php";
 	<div ="favejobsTable">
 	<!--include "faveJobs.php";-->
 	</div>
+	
+	<script type="text/javascript" src="https://apis.google.com/js/api.js"></script>
 	
 	<?php 
 	$user_name = "a";
@@ -151,21 +154,18 @@ include "session.php";
 		
 		$count = 1;
 		if($stmt != NULL) {
-			echo "<br><br><br><table id='resumes'>";
-			echo "<tr><th>Your Resumes</th></tr>";
-			while($row = $stmt->fetchObject()) {
-	      		echo "<tr>";
+			?><table id='resumes'>
+			<tr><th>Your Resumes</th></tr>
+			<?php while($row = $stmt->fetchObject()) {
+	      		?><tr><?php 
 				$resumeURL = $row->url;
-				echo "<td><input type='checkbox' id='resumecheck" . $count . "'>";
-				echo "<td><a href='" . $resumeURL . "' id='resume" . $count . "'>Resume" . $count . "</td>";
-				echo "</tr>";
-				$count++;
+				?><td><input type='checkbox' id='resumecheck<?php $count?>'>
+				<td><a href='<?php $resumeURL?>' id='resume<?php $count?>'>Resume<?php $count?></td>
+				</tr>
+				<?php $count++;
 			}
-			echo "</table>";
+			?></table><?php
 		}
-		/* foreach($db->query(sql) as $row) {
-			echo $row['username'].' '.$row['url']; //etc...
-		} */
 		
 		$db = null;
 	}
@@ -177,8 +177,6 @@ include "session.php";
 	
 	<button onclick="onApiLoad()">Upload New Resume</button>
 	<button onclick="deleteResume()">Delete Selected Resume</button><br>
-	
-	<div id="result"></div>
 	
 	<!--terminado-->
 	
