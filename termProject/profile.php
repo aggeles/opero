@@ -113,11 +113,13 @@ include "session.php";
    		}	
       }            
     </script>	
+   
+    <link rel="stylesheet" type="text/css" href="profile_style.css">
 </head>
 <body>
+	<script type="text/javascript" src="https://apis.google.com/js/api.js"></script>
 	<div id="profileHeader">
 	<b id="welcome">
-	
 	
 	<div id = "linkbox">
 	<a href="index.php">Home</a>
@@ -126,7 +128,7 @@ include "session.php";
 	<a href="logout.php">Log Out</a><br>
 	
 	<!--set preferences should include number of fave jobs to display
-	Pref should be saved as $_SESSION['faveJobCount']-->
+	Pref should be saved as _$SESSION['faveJobCount']-->
 	
 	</div><!--end linkbox-->
 	
@@ -137,9 +139,8 @@ include "session.php";
 	<div ="favejobsTable">
 	<!--include "faveJobs.php";-->
 	</div>
-	
-	<script type="text/javascript" src="https://apis.google.com/js/api.js"></script>
-	
+	<br>
+	<div id="resumetable">
 	<?php 
 	$user_name = "a";
 	$password = "Csci4300";
@@ -154,18 +155,21 @@ include "session.php";
 		
 		$count = 1;
 		if($stmt != NULL) {
-			?><table id='resumes'>
-			<tr><th>Your Resumes</th></tr>
-			<?php while($row = $stmt->fetchObject()) {
-	      		?><tr><?php 
+			echo "<table id='resumes'>";
+			echo "<tr><th>Your Resumes</th></tr>";
+			while($row = $stmt->fetchObject()) {
+	      		echo "<tr>";
 				$resumeURL = $row->url;
-				?><td><input type='checkbox' id='resumecheck<?php $count?>'>
-				<td><a href='<?php $resumeURL?>' id='resume<?php $count?>'>Resume<?php $count?></td>
-				</tr>
-				<?php $count++;
+				echo "<td><input type='checkbox' id='resumecheck"  .$count . "'>";
+				echo "<td><a href='" . $resumeURL . "' id='resume" . $count . "'>Resume" . $count . "</td>";
+				echo "</tr>";
+				$count++;
 			}
-			?></table><?php
+			echo "</table>";
 		}
+		/* foreach($db->query(sql) as $row) {
+			echo $row['username'].' '.$row['url']; //etc...
+		} */
 		
 		$db = null;
 	}
@@ -177,6 +181,7 @@ include "session.php";
 	
 	<button onclick="onApiLoad()">Upload New Resume</button>
 	<button onclick="deleteResume()">Delete Selected Resume</button><br>
+	</div>
 	
 	<!--terminado-->
 	

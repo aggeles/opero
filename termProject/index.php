@@ -2,11 +2,15 @@
 <html>
 <head>
 
+<!--For responsive design-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <!--Google fonts link-->
 
 	<link href='http://fonts.googleapis.com/css?family=Raleway|Dosis|Poiret+One|Jura' rel='stylesheet' type='text/css'>
 
-<!--css stylesheet-->
+<!--css stylesheest-->
+	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
 	<link href="opero_style.css" rel="stylesheet" type="text/css">
 
 	<title>Opero - iWork</title>
@@ -14,13 +18,19 @@
 </head>
 <body bgcolor="#073f40">
 
+<div class="container">
+<div class="row">
+<div class="col-xs-12">
 
+	<h1 id="heading">Opero</h1>
+	<h2 id="tagline">Your source for employment opportunities</h2>
 
-<h1 id="heading">Opero</h1>
-<h2 id="tagline">Your source for employment opportunities</h2>
-
-<p id="instructions">Please enter what you're seeking so we can show you the best jobs available!
-</p>
+	<p id="instructions">Please enter what you're seeking so we can show you the best jobs available!
+	</p>	
+	
+</div>
+</div>
+</div>
 
 <?php
 include('login.php'); // Includes Login Script
