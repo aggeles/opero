@@ -1,6 +1,8 @@
 <html>
 <body bgcolor="#073f40">
 
+<!--For responsive design-->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!--stylesheet-->
 
@@ -9,9 +11,78 @@
 <link href='http://fonts.googleapis.com/css?family=Dosis|Josefin+Sans|Maven+Pro|Quicksand|Exo+2|Pontano+Sans|EB+Garamond|Jura|Comfortaa|Sintony|Antic+Slab|Quattrocento|Marvel|Poiret+One' rel='stylesheet' type='text/css'>
 
 <!--styles-->
+<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+<link href="stylesheet" href="css/bootstrap-theme.min.css">
+<link href="results_responsive.css" rel="stylesheet" type="text/css">
 
-<link href="results.css" rel="stylesheet" type="text/css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 
+<nav role="navigation" class="navbar navbar-default navbar-fixed-top" id="navbar">
+	<div class="container-fluid" id="container-fluid">
+		<div class="navbar-header">
+			<button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+		</div>
+		<!-- Collection of nav links and other content for toggling -->
+        
+        	<div id="navbarCollapse" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+            	<?php
+				include('login.php'); // Includes Login Script
+
+				if(isset($_SESSION['login_user'])){
+					?>
+					<li id="hello">Hello, <?php echo $_SESSION['login_first_name']; ?></li>
+					<li><a href="http://www.opero.us/index_responsive.php">Home</a></li>
+					<li><a href="http://www.opero.us/profile.php">View Profile</a></li>
+					<li><a href="http://www.opero.us/logout.php">Log Out</a></li>
+					<?php
+				}
+				else {
+					?>
+					<li class="dropdown" id="menu1">
+		             <a class="dropdown-toggle" data-toggle="dropdown" href="#menu1">
+		               Login
+		                <b class="caret"></b>
+		             </a>
+		             <div class="dropdown-menu">
+		               <form  name="userInfo" method="POST" action="login.php">
+		                   <input id="homePageUserLogin" placeholder=" User Name" name="email" type="text">
+		                   <input id="homePageUserLogin" placeholder=" Password" name="password" type="password">
+		                   <input type="button" id="register" onclick="window.location='signup.php'" value="Register">
+		                   <input id="login" type="submit" name="submit" value="Log In">
+		                   <input type="button" id="forgotLogin" onclick="window.location='sendReminder.php'" value="Forgot Login Info?">
+		               </form>
+		             </div>
+		           </li>
+					<!-- 		           
+					<div id="navbarCollapse" class="collapse navbar-collapse">
+					<div class="userForm">
+					<form  name="userInfo" method="POST" action="login.php">
+					<input id="homePageUserLogin" placeholder=" User Name" name="email" type="text"><br>
+					<input id="homePageUserLogin" placeholder=" Password" name="password" type="password"><br>
+					<input type="button" id="register" onclick="window.location='signup.php'" value="Register">
+					<input id="login" type="submit" name="submit" value="Log In">
+					<input type="button" id="forgotLogin" onclick="window.location='sendReminder.php'" value="Forgot Login Info?">-->
+					
+			
+					<span><?php echo $error; ?></span>
+					</form>
+					</div>
+					<br>
+					<?php
+				}
+				?>
+            </ul>
+            </div>
+        </div>
+	</div>
+</nav>
 
 <?php
 
@@ -90,8 +161,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	
 		if($result->pages > 1){
 
+		echo "<div class=\"container\">
+			  <div class=\"row\">
+		      <div class=\"col-sm-12\">";	
 		echo "<h1 id=\"no_of_results_message\">Opero found " .$result->hits." jobs";
 		echo " on ".$result->pages." pages\n</h1>";
+		echo "</div>
+			  </div>
+			  </div>";
 
 		}
 
@@ -107,7 +184,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 		$jobs = $result->jobs;
 
 		foreach($jobs as $job){
-			
+
+		?><div class="container">
+		  <div class="row">
+	      <div class="col-sm-12"><?php 
 		//job division
 		echo "<div id=\"job\">";
 
@@ -124,6 +204,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 			echo "<div id=\"desc\">Key word matches: ".$job->description."</div>\n";
 			echo "</div>";
 			echo "\n";
+			?></div>
+				  </div>
+				  </div> <?php 
 		}//endforeach
 
 		}//end if

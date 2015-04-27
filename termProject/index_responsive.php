@@ -11,16 +11,86 @@
 
 <!--css stylesheest-->
 	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-	<link href="opero_style.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+	<link href="opero_style_responsive.css" rel="stylesheet" type="text/css">
 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	
 	<title>Opero - iWork</title>
 
 </head>
 <body bgcolor="#073f40">
 
+<nav role="navigation" class="navbar navbar-default navbar-fixed-top" id="navbar">
+	<div class="container-fluid" id="container-fluid">
+		<div class="navbar-header">
+			<button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+		</div>
+		<!-- Collection of nav links and other content for toggling -->
+        
+        	<div id="navbarCollapse" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+            	<?php
+				include('login.php'); // Includes Login Script
+
+				if(isset($_SESSION['login_user'])){
+					?>
+					<li id="hello">Hello, <?php echo $_SESSION['login_first_name']; ?></li>
+					<li><a href="http://www.opero.us/index_responsive.php">Home</a></li>
+					<li><a href="http://www.opero.us/profile.php">View Profile</a></li>
+					<li><a href="http://www.opero.us/logout.php">Log Out</a></li>
+					<?php
+				}
+				else {
+					?>
+					<li class="dropdown" id="menu1">
+		             <a class="dropdown-toggle" data-toggle="dropdown" href="#menu1">
+		               Login
+		                <b class="caret"></b>
+		             </a>
+		             <div class="dropdown-menu">
+		               <form  name="userInfo" method="POST" action="login.php">
+		                   <input id="homePageUserLogin" placeholder=" User Name" name="email" type="text">
+		                   <input id="homePageUserLogin" placeholder=" Password" name="password" type="password">
+		                   <input type="button" id="register" onclick="window.location='signup.php'" value="Register">
+		                   <input id="login" type="submit" name="submit" value="Log In">
+		                   <input type="button" id="forgotLogin" onclick="window.location='sendReminder.php'" value="Forgot Login Info?">
+		               </form>
+		             </div>
+		           </li>
+					<!-- 		           
+					<div id="navbarCollapse" class="collapse navbar-collapse">
+					<div class="userForm">
+					<form  name="userInfo" method="POST" action="login.php">
+					<input id="homePageUserLogin" placeholder=" User Name" name="email" type="text"><br>
+					<input id="homePageUserLogin" placeholder=" Password" name="password" type="password"><br>
+					<input type="button" id="register" onclick="window.location='signup.php'" value="Register">
+					<input id="login" type="submit" name="submit" value="Log In">
+					<input type="button" id="forgotLogin" onclick="window.location='sendReminder.php'" value="Forgot Login Info?">-->
+					
+			
+					<span><?php echo $error; ?></span>
+					</form>
+					</div>
+					<br>
+					<?php
+				}
+				?>
+            </ul>
+            </div>
+        </div>
+	</div>
+</nav>
+
 <div class="container">
 <div class="row">
-<div class="col-xs-12">
+<div class="col-sm-12">
 
 	<h1 id="heading">Opero</h1>
 	<h2 id="tagline">Your source for employment opportunities</h2>
@@ -31,37 +101,41 @@
 </div>
 </div>
 
-<?php
+<!--<?php
 include('login.php'); // Includes Login Script
 
 if(isset($_SESSION['login_user'])){
 	?>
 	<div class="userForm">
-	Hello: <?php echo $_SESSION['login_first_name']; ?>
-	<a href="logout.php">Log Out</a></div>
+		Hello: <?php echo $_SESSION['login_first_name']; ?>
+		<a href="logout.php">Log Out</a></div>
+		<a href="http://www.opero.us/profile.php">View Profile</a></div>
 	<?php
 }
 else {
 		?>
 		<div class="userForm">
-		<form  name="userInfo" method="POST" action="">
+		<form  name="userInfo" method="POST" action="login.php">
 		<input id="homePageUserLogin" placeholder=" User Name" name="email" type="text"><br>
 		<input id="homePageUserLogin" placeholder=" Password" name="password" type="password"><br>
 		<input type="button" id="register" onclick="window.location='signup.php'" value="Register">
 		<input id="login" type="submit" name="submit" value="Log In">
+		<input type="button" id="forgotLogin" onclick="window.location='sendReminder.php'" value="Forgot Login Info?">
+
+
 		<span><?php echo $error; ?></span>
 		</form>
 		</div>
 		<br>
 		<?php
 }
-?>
+?>-->
 
-<div class="form">
+<div class="form panel panel-default">
 <form name="dataForm" action="temp_search_results.php" method="POST" class="form-horizontal">
 <div class="form-group form-group-sm">
-<label class="col-sm-2 control-label" for="inputBox">Occupation: </label>
-<div class="col-sm-8">
+<label class="col-sm-4 control-label" for="inputBox">Occupation: </label>
+<div class="col-sm-7">
 	<p id="input"><input id="inputBox" name="job" type="text" class="form-control"></p>	
 </div>
 </div>
@@ -73,8 +147,8 @@ else {
 </div>	
 
 <!--drop down menu with all states-->
-<label class="col-sm-1 control-label" for="sort">State: </label>
-<div class="col-sm-5">
+<label class="col-sm-2 control-label" for="sort">State: </label>
+<div class="col-sm-4">
 	<select id="sort" name="state" class="form-control">
 	<option value ="Alabama">Alabama</option>
 	<option value="Alaska">Alaska</option>
@@ -135,19 +209,19 @@ Zip Code: <input id="inputBox" type="text" height="40px" size="5em" name="zipCod
 -->
 
 <div class="form-group form-group-xs">
-<label class="col-sm-2 control-label" for="full">Full Time</label>
-<div class="col-sm-4">
+<label class="col-sm-4 control-label" for="full">Full Time</label>
+<div class="col-sm-1">
 	<input type="radio" name="time" value="f" checked class="form-control radio-inline" id="full">
 </div>	
-<label class="col-sm-2 control-label" for="part">Part Time</label>
-<div class="col-sm-4">
+<label class="col-sm-4 control-label" for="part">Part Time</label>
+<div class="col-sm-1">
 	<input type="radio" name="time" value="p" class="form-control radio-inline" id="part">	
 </div>
 </div>
 
 <div class="form-group form-group-xs">
-<label class="col-sm-5 control-label" for="sort">Type of Employment Sought: </label>
-<div class="col-sm-6">
+<label class="col-sm-7 control-label" for="sort">Type of Employment Sought: </label>
+<div class="col-sm-4">
 	<p id="input"><select id="sort" name="contract" class="form-control"> 
 	<option value="p">Permanent</option>
 	<option value="c">Contract</option>
@@ -159,8 +233,8 @@ Zip Code: <input id="inputBox" type="text" height="40px" size="5em" name="zipCod
 </div>
 
 <div class="form-group form-group-xs">
-<label class="col-sm-4 control-label" for="sort">Sort Results By: </label>
-<div class="col-sm-6">
+<label class="col-sm-5 control-label" for="sort">Sort Results By: </label>
+<div class="col-sm-5">
 	<p id="input"><select id="sort" name="sortBy" class="form-control">
 		<option value="relevance">Relevance</option>
 		<option value="date">Most Recent</option>
@@ -171,8 +245,8 @@ Zip Code: <input id="inputBox" type="text" height="40px" size="5em" name="zipCod
 </div>
 
 <div class="form-group form-group-xs">
-<label class="col-sm-6 control-label" for="inputBox">Number of Results (1-100) Per Page: </label>
-<div class="col-sm-5">
+<label class="col-sm-8 control-label" for="inputBox">Number of Results (1-100) Per Page: </label>
+<div class="col-sm-3">
 	<div id="input"><input id="inputBox" type="number" size="10em" name="#OfResults" max=100 min=1 class="form-control">
 
 	</div>

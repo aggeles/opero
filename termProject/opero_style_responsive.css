@@ -1,1 +1,517 @@
+body {
+	background-color: #073f40 !important;
+}
 
+#hello {
+	padding-top: 5px !important; 
+	padding-bottom: 5px !important;
+	padding-right: 10px !important;
+}
+
+.navbar-nav li a {
+	color: #000000 !important;
+	padding-top: 5px !important; 
+	padding-bottom: 5px !important;
+}
+
+.navbar {
+	min-height:20px !important;
+}
+
+#container-fluid {
+	background-color:#7aa37a;
+}
+
+.dropdown-menu {
+	background-color:#7aa37a;
+}
+
+#homePageUserLogin {
+	font-size: 13px !important;
+	width: 95% !important;
+}
+
+#register {
+	width: 50% !important;
+}
+
+#login {
+	width: 37% !important;
+}
+
+#forgotLogin {
+	width: 85% !important;
+}
+
+.userInfo{
+	height: 100px;
+	width: 300px;
+	position: absolute;
+	top: 12px;
+	right: 20px;
+	font-family: "Raleway", Times, serif;
+	font-size: 18px;
+	color: #ffffff;
+	font-style: bold;
+	text-shadow: 1px 1px 1px #000000;
+
+}
+
+
+a:visited {
+	color:#FF0000;
+}
+
+#welcome{
+
+
+	font-family: "Poiret One", Times, serif;
+	font-size: 22px;
+	color: #ffffff;
+	font-weight: 600;
+	/* position: absolute; */
+	top: 15px;
+	left: 30px;
+	
+
+}
+#signuplink{
+
+	text-decoration:none;
+
+}
+
+#searchButton{
+
+	font-family: "Raleway", Times, serif;
+        height: 40px;
+        font-size: 32px;
+        background-color: #7aa37a;
+        border-color: #ffffff;
+        border-width: 1px;
+        border-style: solid;
+        color: #052c2d;
+        text-shadow: 1px 1px #9cb2b3;
+        position:relative;
+       	text-decoration: none; 
+        text-align: center;
+        margin-top: 5px;
+        width: 160px;
+	margin-bottom: -5px;
+	margin-left: auto;
+        margin-right: auto;
+        border-radius: 18px;
+        font-weight: 400;
+
+
+
+
+}
+
+
+#accountLink{
+	width:200px;
+	font-family: "Raleway", Times, serif;
+        height: 32px;
+        font-size: 24px;
+        background-color:#7aa37a;
+        border-color: #ffffff;
+        border-width: 1px;
+        border-style: solid;
+        color: #073f40;
+       	text-shadow: 1px 1px #708090; 
+        position:absolute;
+	top: 20px;
+	right: 38px;
+       	text-decoration: none; 
+        text-align: center;
+       
+     	text-align: center; 
+      
+        border-radius: 5px;
+        font-weight: 400;
+
+
+
+
+
+}
+
+#heading {
+	
+	text-shadow: 1px 1px 2px #ffffff; 
+	/*#708090;*/
+	font-size: 90px;
+	font-family: "Poiret One", Times, serif;
+	color: #7aa37a;
+	text-align: center;	
+	position: relative;
+	margin-right: auto;
+	margin-left: auto;
+	margin-top: 0px;
+	margin-bottom: -20px;
+	padding-top: 70px;
+}
+
+#loginName {
+
+	
+	font-family: "Poiret One", Times,serif;
+	font-size: 18px;
+	text-shadow: 1px 1px 1px #000000;
+	color: #ffffff;
+	position: relative;
+	margin-top: px;
+	margin-right: px;
+	font-style: bold;
+	float:left;	
+
+}
+
+#loginPassword{
+	
+	float:left;
+	text-shadow: 1px 1px 1px #000000;
+	font-style: bold;
+	font-family: "Poiret One", Times, serif;
+	font-size: 18px;
+	color: #ffffff;
+	position: relative;
+	margin-top: 0px;
+	margin-right: 10px;
+
+}
+	
+#loginButton{
+	float:left;
+	margin-left: 5px;
+	position: relative;
+	margin-top: 40px;
+
+}
+/*
+#forgotInfoLink{
+
+	position: absolute;
+        top: 79px;
+        right: 40px;
+        font-family: "Poiret One", Times, serif;
+        font-size: 20px;
+        color: #ffffff;
+        font-style: bold;
+        text-shadow: 1px 1px #000000;
+	text-decoration: none;
+
+
+}
+
+#signInLink{
+
+	text-decoration: none;
+	position: absolute;
+	top: 79px;
+	right: 210px;
+	font-family: "Poiret One", Times, serif;
+	font-size: 20px;
+	color: #ffffff;
+	font-style: bold;
+	text-shadow: 1px 1px #000000;
+}
+*/
+#inputBox {
+	color: #073f40;
+	padding: 20px, 15px;
+	line-height: 26px;	
+	font-size: 20px;
+	padding-left:10px;
+	margin-left: 10px;
+}
+
+#login{
+	font-family: "Raleway", Times, serif;
+	height: 35px;
+	font-size: 22px;
+	background-color: #7aa37a;
+	border-color: #ffffff;
+	border-width: 1px;
+	border-style: solid;
+	color: #052c2d;
+	text-shadow: 1px 1px #9cb2b3;
+	position:relative;
+	float:right;
+	text-align: center;
+	margin-top: 4px;
+	width: 35%;
+	margin-right: 4px;
+	border-radius: 5px;
+	font-weight: 400;
+}
+
+#forgotLogin{
+	font-family: "Raleway", Times, serif;
+	height: 35px;
+	font-size: 22px;
+	 background-color: #7aa37a;
+        border-color: #ffffff;
+        border-width: 1px;
+        border-style: solid;
+        color: #052c2d;
+        text-shadow: 1px 1px  #9cb2b3;
+	position: relative;
+	margin-left: auto;
+	margin-right: 15px;
+	text-align: center;
+	margin-top: 6px;
+	margin-right: 19px;
+	float: right;
+	border-radius: 5px;
+	font-weight: 400;
+}
+
+#register{
+	font-family: "Raleway", Times, serif;
+	border-radius: 5px;
+	height: 35px;
+	width: 35%;
+	font-size: 22px;
+	background-color: #7aa37a;
+        border-color: #ffffff;
+        border-width: 1px;
+        border-style: solid;
+        color: #052c2d;
+        text-shadow: 1px 1px  #9cb2b3;
+	position: relative;
+	float: right;
+	font-weight: 400;
+	text-align: center;
+	margin-left: 3px;
+	margin-right: 12px;
+	margin-top: 4px;
+	
+
+
+}
+
+#tagline {
+	text-shadow: 1px 1px #000000;	
+	font-size: 30px;
+	font-family: "Dosis", Times, serif;
+	color: #f5f9e9;
+	text-align: center;
+	text-shadow: 
+}
+
+#footer {
+	text-align: center;
+	color: #f5f9e9;
+	font-family: "Poiret One", "Georgia", Times, serif;
+	font-style: italic;
+	font-size: 13px;
+	position: relative;
+	margin-top: 30px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+#motto {
+
+	text-align: center;
+	color: #f5f9e9;
+	font-family: "Poiret One", "Georgia", Times, serif;
+}
+#citySubtext {
+
+	color: #708090;
+	font-size: 10px;
+	position: absolute;
+	top: 10px;
+	left: 50%;
+}
+
+
+
+.form {
+	padding: 10px;
+	margin-right: auto;
+	margin-left: auto;
+	max-width: 600px;
+	min-width: auto;
+	/* height: 370px; */
+	position: relative;
+	margin-bottom: -10px;	
+	margin-top: -10px;	
+	background-color:#7aa37a;
+	border-radius: 30px;
+	border-color: #708090;
+	border-width: medium;
+	border-style: solid;
+	margin-width: 3px;
+	margin-color: #8e8f77;	
+
+}
+
+.signupForm {
+	padding: 5px;
+	margin-right: auto;
+	margin-left: auto;
+	width: 450px;
+	height: 200px;
+	position: relative;
+	margin-bottom: -10px;	
+	margin-top: -10px;	
+	background-color:#7aa37a;
+	border-radius: 25px;
+	border-color: #708090;
+	border-width: medium;
+	border-style: solid;
+	margin-width: 3px;
+	margin-color: #8e8f77;	
+	text-align: left;
+}
+#name{
+
+	float:right;
+	position: relative;
+	margin-top:-180px;
+	font-family: "Raleway", Times, serif;
+	font-size: 20px;
+	color:#ffffff;
+	text-shadow: 1px 1px #000000;
+	margin-right: 70px;
+
+}
+
+#idFormInput{
+
+	color: #073f40;
+        padding: 20px, 15px;
+        line-height: 26px;
+        font-size: 22px;
+        margin-right: auto;
+        margin-left: auto;
+	margin-top: 3px;
+	margin-bottom: 3px;	
+
+
+}
+
+#homePageUserLogin{
+	width: 80%;
+	float: right;	
+	border-width: 1px;
+	border-color: #000000;
+	border-style: black;
+	border-radius: 5px;	
+        color: #073f40;
+        padding: 20px, 15px;
+        line-height: 30px;
+        font-size: 22px;
+        margin-right: 0px;
+       
+        margin-top: 3px;
+        margin-bottom: 3px;
+
+
+}
+
+
+
+
+#submit {
+	background-color: #073f40;
+	border-color: #ffffff;
+	border-width: 1px;
+	color: #ffffff;
+	width: 250px;
+	height: 40px;
+	border-style: solid;
+	
+	margin-left:auto;
+	margin-right:auto;
+	border-radius: 25px;
+	font-size: 20px;
+	font-family: "Raleway", Times, serif;
+	position: relative;
+	margin-top: -4px;
+	margin-bottom: 10px;
+}
+
+#instructions {
+
+	color: #f5f9e9;
+	font-size: 18px;
+	font-family: "Raleway", Times, serif;
+	text-align: center;
+}
+
+label {
+	text-shadow: 1px 1px #9cb2b3;
+	position: relative;
+	margin-top: 0px;
+	color: #052c2d;
+	font-weight: 550;
+	font-size: 22px;
+	font-family: "Raleway", Times, serif;
+	text-align: center;		
+}
+
+#sort{
+	
+	color: #052c2d;
+	font-family: "Raleway", Times, serif;
+	font-size: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+
+}
+
+#signupValues{
+	color: #073f40;
+	font-family: "Raleway", Times, serif;
+	font-size: 20px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+
+}
+
+#time {
+	color:#073f40;
+	text-align:center;
+	position: relative;
+	margin-top: 0px;
+	margin-bottom: 0px;	
+	font-family: "Raleway", Times, serif;
+	margin-right: auto;
+	margin-left: auto;
+	font-size: 18px;	
+		
+}
+#parttime {
+	color:#073f40;
+	font-family: "Raleway", Times, serif;
+	margin-right: auto;
+	margin-left: auto;
+	font-size: 18px;	
+	text-align:center;
+}
+#pageResults {
+
+	/*nothing here yet, built to add customizability if req'd*/
+
+}
+
+#contract {
+
+	/*also for customizability*/
+
+}
+
+#dol {
+	font-family: "Raleway", Times, serif;	
+	text-align: center;
+	font-size: 18px;
+	/*done for aesthetics*/
+
+}
