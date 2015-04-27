@@ -2,15 +2,11 @@
 <html>
 <head>
 
-<!--For responsive design-->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <!--Google fonts link-->
 
 	<link href='http://fonts.googleapis.com/css?family=Raleway|Dosis|Poiret+One|Jura' rel='stylesheet' type='text/css'>
 
-<!--css stylesheest-->
-	<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+<!--css stylesheet-->
 	<link href="opero_style.css" rel="stylesheet" type="text/css">
 
 	<title>Opero - iWork</title>
@@ -18,19 +14,12 @@
 </head>
 <body bgcolor="#073f40">
 
-<div class="container">
-<div class="row">
-<div class="col-xs-12">
 
-	<h1 id="heading">Opero</h1>
-	<h2 id="tagline">Your source for employment opportunities</h2>
 
-	<p id="instructions">Please enter what you're seeking so we can show you the best jobs available!
-	</p>	
-	
-</div>
-</div>
-</div>
+<h1 id="heading">Opero</h1>
+<h2 id="tagline">Your source for employment opportunities</h2>
+<p id="instructions">Please enter what you're seeking so we can show you the best jobs available!
+</p>
 
 <?php
 include('login.php'); // Includes Login Script
@@ -39,17 +28,23 @@ if(isset($_SESSION['login_user'])){
 	?>
 	<div class="userForm">
 	Hello: <?php echo $_SESSION['login_first_name']; ?>
-	<a href="logout.php">Log Out</a></div>
+	<a href="logout.php">Log Out</a>
+	<a href="http://www.opero.us/profile.php">View Profile</a></div>	
+
+	
 	<?php
 }
 else {
 		?>
 		<div class="userForm">
-		<form  name="userInfo" method="POST" action="">
+		<form  name="userInfo" method="POST" action="login.php">
 		<input id="homePageUserLogin" placeholder=" User Name" name="email" type="text"><br>
 		<input id="homePageUserLogin" placeholder=" Password" name="password" type="password"><br>
 		<input type="button" id="register" onclick="window.location='signup.php'" value="Register">
 		<input id="login" type="submit" name="submit" value="Log In">
+		<input type="button" id="forgotLogin" onclick="window.location='sendReminder.php'" value="Forgot Login Info?">
+
+
 		<span><?php echo $error; ?></span>
 		</form>
 		</div>
@@ -148,7 +143,7 @@ Zip Code: <input id="inputBox" type="text" height="40px" size="5em" name="zipCod
 
 </div>
 
-</p>
+<!--</p>  -->
 
 <center><input id="submit" type="submit" value="Click Here For Results" ></center>
 
